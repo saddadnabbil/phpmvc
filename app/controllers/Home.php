@@ -1,12 +1,13 @@
 <?php 
 
-class Home {
-  // public function index() {
-  //   echo 'Home/index';
-  // }
+class Home extends Controller {
+  public function index() {
+    $this->view('home/index');
+  }
+  
   
   public function page() 
   {
-    echo 'Home/index';
+    echo 'Home/page';
   }
 }
