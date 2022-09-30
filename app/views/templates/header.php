@@ -29,7 +29,9 @@
           <li class="nav-item">
             <a class="nav-link text-dark" href="<?= BASEURL; ?>/about">About</a>
           </li>
-
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="<?= BASEURL; ?>/mahasiswa">Mahasiswa</a>
+          </li>
         </ul>
       </div>
     </div>
