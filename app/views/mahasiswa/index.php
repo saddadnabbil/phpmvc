@@ -9,9 +9,55 @@
       </div>
 
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary btn-sm mb-3" data-bs-toggle="modal" data-bs-target="#formModal">
+      <button type="button" class="btn btn-primary btn-sm mb-3" data-toggle="modal" data-target="#formModal">
         Tambah Data Mahasiswa
       </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="<?= BASEURL; ?>/mahasiswa/tambah" method="post">
+                <div class="mb-2">
+                  <label for="nama" class="form-label">Nama</label>
+                  <input type="text" class="form-control" id="nama" name="nama">
+                </div>
+
+                <div class="mb-2">
+                  <label for="nim" class="form-label">NIM</label>
+                  <input type="number" class="form-control" id="nim" name="nim">
+                </div>
+
+                <div class="mb-2">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="email">
+                </div>
+
+                <div class="mb-2">
+                  <label for="jurusan" class="form-label">Jurusan</label>
+                  <select id="jurusan" class="form-select" name="jurusan">
+                    <option value="Teknik Informatika">Teknik Informatika</option>
+                    <option value="Konversi Energi">Konversi Energi</option>
+                    <option value="Teknik Mesin">Teknik Mesin</option>
+                  </select>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <h3>Daftar Mahasiswa</h3>
 
@@ -23,8 +69,7 @@
             class="badge bg-danger text-light float-end mx-1 text-decoration-none"
             onclick="return confirm('yakin')">delete</a>
           <a href="<?= BASEURL; ?>/mahasiswa/ubah/<?= $mhs['id']; ?>"
-            class="badge bg-success text-light float-end mx-1 text-decoration-none tampilModalUbah"
-            data-bs-toggle="modal" data-bs-target="#formModal">ubah</a>
+            class="badge bg-success text-light float-end mx-1 text-decoration-none">ubah</a>
           <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id']; ?>"
             class="badge bg-primary text-light float-end mx-1 text-decoration-none">detail</a>
 
