@@ -1,5 +1,5 @@
 <div class="container mt-4">
-  <div class="row">
+  <div class="row justify-content-center">
     <div class="col-6">
 
       <div class="row">
@@ -17,9 +17,17 @@
 
       <ul class="list-group">
         <?php foreach( $data['mhs'] as $mhs ) : ?>
-        <li class="list-group-item d-flex justify-content-between align-items-start">
+        <li class="list-group-item">
           <?= $mhs['nama']; ?>
-          <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id']; ?>" class="badge bg-primary text-light ">detail</a>
+          <a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mhs['id']; ?>"
+            class="badge bg-danger text-light float-end mx-1 text-decoration-none"
+            onclick="return confirm('yakin')">delete</a>
+          <a href="<?= BASEURL; ?>/mahasiswa/ubah/<?= $mhs['id']; ?>"
+            class="badge bg-success text-light float-end mx-1 text-decoration-none tampilModalUbah"
+            data-bs-toggle="modal" data-bs-target="#formModal">ubah</a>
+          <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id']; ?>"
+            class="badge bg-primary text-light float-end mx-1 text-decoration-none">detail</a>
+
         </li>
         <?php endforeach; ?>
       </ul>
